@@ -31,10 +31,11 @@ export const TextField: React.FC<TextFieldProps> = ({
         placeholder={placeholder}
         multiline={multiline}
         numberOfLines={numberOfLines}
-        className={`border border-gray-300 rounded-lg flex items-center justify-center px-3 py-2 text-base ${
+        className={`border border-gray-300 rounded-lg px-3 py-2 text-base ${
           multiline ? "h-24" : ""
         } ${error ? "border-red-500" : ""}`}
       />
+
       {error && <Text className="text-red-500 text-sm mt-1">{error}</Text>}
     </View>
   );

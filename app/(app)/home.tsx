@@ -5,9 +5,11 @@ import * as Location from "expo-location";
 import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { Alert, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const { user, signOut } = useAuth();
+  const { top } = useSafeAreaInsets();
   const [guard, setGuard] = useState<Guard | null>(null);
   const [location, setLocation] = useState<LocationType | null>(null);
   const [loading, setLoading] = useState(true);
@@ -85,7 +87,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <View className="flex-1 bg-white p-6">
+    <View className="flex-1 bg-white p-6" style={{ paddingTop: top }}>
       <View className="mb-8">
         <Text className="text-2xl font-bold text-gray-900 mb-2">
           Welcome, {guard?.name || "Guard"}

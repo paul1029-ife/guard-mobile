@@ -6,8 +6,8 @@ export default function AppLayout() {
       <Stack.Screen
         name="home"
         options={{
-          title: "Guard Dashboard",
-          headerShown: true,
+          title: "Guard System",
+          headerShown: false,
         }}
       />
       <Stack.Screen
