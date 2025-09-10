@@ -23,15 +23,13 @@ export default function SignInScreen() {
 
     try {
       const { error } = await signIn(email, password);
-
       if (error) {
         setError(error);
       } else {
-        // Navigation will be handled by the auth state change
         router.replace("/(app)/home");
       }
     } catch (err) {
-      setError("An unexpected error occurred");
+      setError(`An unexpected error occurred: ${err}`);
     } finally {
       setLoading(false);
     }
